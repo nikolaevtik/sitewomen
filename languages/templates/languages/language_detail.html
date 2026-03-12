@@ -1,0 +1,9 @@
+{% extends "languages/base.html" %}
+
+{% block title %}{{ language.name }} - подробнее{% endblock %}
+
+{% block content %}
+    <h1>{{ language.name }}</h1>
+    <p>{{ language.description|linebreaks }}</p>
+    <p><a href="{% url 'home' %}">← Назад к списку</a></p>
+{% endblock %}
