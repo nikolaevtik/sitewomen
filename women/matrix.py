@@ -1,16 +1,14 @@
-n = int(input()) #-количество строк
-m = int(input()) # количество столбцов
-matrix=[]
-# for r in range(n):
-#     temp =[]
-#     for c in range(m):
-#         temp.append(input())
-#     matrix.append(temp)
+n = int(input())
+m = int(input())
 
-# for item in matrix:
-#     print(item)
-    
-matrix=([input() for c in range(m)] for r in range(n))
+matrix = [[input() for _ in range(m)] for _ in range(n)]
+
+# Вывод исходной матрицы
 for row in matrix:
-    print(row)
-    
+    print(*row)
+
+print()
+
+# Вывод транспонированной матрицы
+for i in range(m):
+    print(*[matrix[j][i] for j in range(n)])

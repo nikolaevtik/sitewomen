@@ -150,7 +150,7 @@ def page_not_found(request, exception):
 
 def show_tag_postlist(request, tag_slug):
     tag = get_object_or_404(TagPost, slug=tag_slug)
-    posts = tag.tags.filter(is_published=Women.Status.PUBLISHED).select_related("cat")
+    posts = tag.tags.filter(is_published=Women.Status.PUBLISHED).select_related("cat") #type:ignore
 
     data = {
         'title': f"Тег: {tag.tag}",
